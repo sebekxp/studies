@@ -1,0 +1,100 @@
+1. Wolny Alek wyœmia³ Andrzeja
+2. Wolny Mateusz poca³owa³ Paw³a
+3. Pocieszny Krystian przytuli³ Paw³a
+4. £agodny Alek oplu³ Andrzeja
+5. Pocieszny Kamil uderzy³ Kamila
+6. Pocieszny £ukasz poca³owa³ Paw³a
+7. £agodny Pawe³ poca³owa³ Piotrka
+8. £agodny Micha³ przytuli³ Krystiana
+9. Agresywny  wyœmia³ £ukasza
+10. Brzydki Andrzej przytuli³ Kamila
+11. Agresywny Pawe³ wyœmia³ 
+12. £agodny Mateusz wyœmia³ Micha³a
+13. Agresywny Krzysiek przytuli³ Kamila
+14. Wolny £ukasz wyœmia³ Krystiana
+15. Wolny Micha³ przytuli³ Mateusza
+16. £adny Mateusz wyœmia³ Micha³a
+17. Agresywny  poca³owa³ £ukasza
+18. Agresywny Kamil uderzy³ Paw³a
+19. Brzydki Alek oplu³ £ukasza
+20. Agresywny Alek poca³owa³ Piotrka
+21. Pocieszny Andrzej przytuli³ Piotrka
+22. £adny £ukasz poca³owa³ Krystiana
+23. Mi³uj¹cy Alek przytuli³ Paw³a
+24. Szybki Piotrek oplu³ Piotrka
+25. £agodny Mateusz oplu³ Piotrka
+26. Pocieszny Krzysiek poca³owa³ Mateusza
+27. Pocieszny Pawe³ wyœmia³ £ukasza
+28. Pocieszny Mateusz przytuli³ Alka
+29. Agresywny Krzysiek uderzy³ £ukasza
+30. Szybki Mateusz poca³owa³ Andrzeja
+31. Szybki Krystian oplu³ 
+32. Brzydki Andrzej poca³owa³ Kamila
+33. £agodny Piotrek oplu³ Micha³a
+34. Mi³uj¹cy Pawe³ poca³owa³ Andrzeja
+35. Pocieszny Piotrek oplu³ Mateusza
+36. £agodny Pawe³ wyœmia³ Mateusza
+37. Mi³uj¹cy Krystian oplu³ Andrzeja
+38. £adny Andrzej wyœmia³ Piotrka
+39. £adny  uderzy³ Krystiana
+40. Mi³uj¹cy Pawe³ wyœmia³ Kamila
+41. Agresywny Krzysiek wyœmia³ Piotrka
+42. Brzydki Andrzej wyœmia³ Alka
+43. Agresywny Krystian przytuli³ Piotrka
+44. Szybki Krzysiek oplu³ Micha³a
+45. £adny Andrzej oplu³ Alka
+46. £agodny Micha³ poca³owa³ Piotrka
+47. Brzydki Krystian oplu³ Kamila
+48. £agodny Kamil oplu³ Piotrka
+49. Mi³uj¹cy Kamil przytuli³ Piotrka
+50. Wolny Micha³ przytuli³ Piotrka
+51. Wolny Micha³ wyœmia³ Krzyœka
+52. Szybki Alek uderzy³ Piotrka
+53. Wolny Krzysiek uderzy³ Alka
+54. Pocieszny Kamil wyœmia³ Krzyœka
+55. £agodny  wyœmia³ Piotrka
+56. Wolny Piotrek przytuli³ Krzyœka
+57. Szybki Andrzej uderzy³ £ukasza
+58. Wolny £ukasz oplu³ Alka
+59. Agresywny Kamil oplu³ 
+60. Agresywny  przytuli³ Alka
+61. Wolny Micha³ poca³owa³ Krzyœka
+62. Pocieszny Micha³ uderzy³ Piotrka
+63. Mi³uj¹cy Mateusz przytuli³ Paw³a
+64. Mi³uj¹cy Piotrek wyœmia³ Krzyœka
+65. £adny Pawe³ przytuli³ Paw³a
+66. Wolny  uderzy³ 
+67. £agodny Mateusz uderzy³ £ukasza
+68. £adny Andrzej uderzy³ Paw³a
+69. Pocieszny £ukasz wyœmia³ Micha³a
+70. £agodny Alek oplu³ Andrzeja
+71. £adny Alek wyœmia³ Paw³a
+72. Szybki Micha³ wyœmia³ Krystiana
+73. Mi³uj¹cy Alek uderzy³ £ukasza
+74. Wolny Micha³ poca³owa³ Kamila
+75. Agresywny Krzysiek oplu³ Mateusza
+76. £adny Micha³ wyœmia³ 
+77. Pocieszny Pawe³ przytuli³ Andrzeja
+78. Szybki Piotrek oplu³ Andrzeja
+79. Pocieszny Piotrek oplu³ Krystiana
+80. £agodny Alek uderzy³ Mateusza
+81. £adny Krzysiek przytuli³ Mateusza
+82. £agodny Andrzej oplu³ 
+83. Wolny Andrzej oplu³ Mateusza
+84. Szybki Kamil poca³owa³ Piotrka
+85. Brzydki Krystian poca³owa³ Mateusza
+86. Wolny Pawe³ przytuli³ Micha³a
+87. Brzydki Krzysiek wyœmia³ Alka
+88. £adny Kamil uderzy³ 
+89. Brzydki  poca³owa³ Paw³a
+90. Agresywny Alek przytuli³ Andrzeja
+91. Szybki Piotrek uderzy³ Krzyœka
+92. £adny Pawe³ poca³owa³ Krzyœka
+93. Wolny Pawe³ przytuli³ Piotrka
+94. Brzydki Andrzej poca³owa³ Paw³a
+95. Szybki £ukasz przytuli³ Kamila
+96. Pocieszny Kamil oplu³ 
+97. Brzydki  uderzy³ Krzyœka
+98. Brzydki  poca³owa³ £ukasza
+99. Brzydki Kamil przytuli³ Kamila
+100. Pocieszny £ukasz uderzy³ Kamila

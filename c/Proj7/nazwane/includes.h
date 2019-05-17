@@ -1,0 +1,14 @@
+#ifndef NIENAZWANE_H
+#define NIENAZWANE_H
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <cstdlib>
+#include <ctime>
+#include <unistd.h>
+#include <sys/ipc.h>
+#include <sys/wait.h>
+#include <fcntl.h>
+#include <sys/resource.h>
+#include <csignal>
+#endif //NIENAZWANE_H

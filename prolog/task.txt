@@ -1,0 +1,80 @@
+Przyjaciele:
+Jarek, Franek, Stefan, Albert, Szymon, Robert, Marcin 
+mieszkaj¹ w jednym budynku, ka¿dy na innym piêtrze (0, 1, 2, ...). 
+
+Ka¿dy z nich ma inne zwierzê:
+psa, kota, rybkê, chomika, papugê, wê¿a, kanarka.
+
+Na którym piêtrze mieszka ka¿dy z nich i jakie ma zwierzê, jeœli nastêpuj¹ce zdania s¹ prawd¹?
+1. Szymon nie ma papugi.
+2. W³aœciciel papugi mieszka na piêtrze 6.
+3. Robert mieszka wy¿ej ni¿ Jarek.
+4. W³aœciciel wê¿a mieszka na piêtrze 0.
+5. Jarek mieszka ni¿ej ni¿ Albert.
+6. W³aœciciel kota mieszka na piêtrze 5.
+7. Stefan mieszka wy¿ej ni¿ Jarek.
+8. W³aœciciel chomika mieszka na piêtrze 4.
+9. Marcin nie ma wê¿a.
+10. Albert mieszka wy¿ej ni¿ Stefan.
+11. W³aœciciel kanarka mieszka na piêtrze 1.
+12. Robert nie ma papugi.
+13. Robert nie ma kanarka.
+14. Franek mieszka ni¿ej ni¿ Jarek.
+15. W³aœciciel psa mieszka na piêtrze 2.
+16. W³aœciciel rybki mieszka na piêtrze 3.
+17. Robert mieszka ni¿ej ni¿ Albert.
+18. Jarek mieszka ni¿ej ni¿ Szymon.
+19. Stefan nie ma rybki.
+20. Robert nie ma psa.
+21. Marcin mieszka ni¿ej ni¿ Albert.
+22. Albert nie ma wê¿a.
+23. Robert nie ma kota.
+24. Szymon mieszka ni¿ej ni¿ Marcin.
+25. Robert mieszka ni¿ej ni¿ Stefan.
+26. Albert mieszka wy¿ej ni¿ Szymon.
+27. Franek nie ma psa.
+28. Jarek nie ma rybki.
+29. Franek nie ma papugi.
+30. Robert mieszka wy¿ej ni¿ Franek.
+31. Robert mieszka wy¿ej ni¿ Szymon.
+32. Marcin mieszka wy¿ej ni¿ Jarek.
+33. Franek mieszka ni¿ej ni¿ Szymon.
+34. Marcin nie ma kota.
+35. Marcin nie ma kanarka.
+36. Marcin mieszka ni¿ej ni¿ Robert.
+37. Franek mieszka ni¿ej ni¿ Marcin.
+38. Franek mieszka ni¿ej ni¿ Stefan.
+39. Marcin nie ma papugi.
+40. Albert mieszka wy¿ej ni¿ Franek.
+41. Szymon mieszka ni¿ej ni¿ Stefan.
+42. Marcin mieszka ni¿ej ni¿ Stefan.
+43. Robert nie ma wê¿a.
+44. Szymon nie ma kanarka.
+45. Robert nie ma rybki.
+46. Jarek nie ma psa.
+47. Albert nie ma psa.
+48. Szymon nie ma chomika.
+49. Albert nie ma chomika.
+50. Stefan nie ma wê¿a.
+51. Marcin nie ma chomika.
+52. Franek nie ma kanarka.
+53. Marcin nie ma psa.
+54. Jarek nie ma wê¿a.
+55. Franek nie ma kota.
+56. Franek nie ma chomika.
+57. Szymon nie ma wê¿a.
+58. Jarek nie ma kota.
+59. Albert nie ma kota.
+60. Jarek nie ma papugi.
+61. Jarek nie ma chomika.
+62. Franek nie ma rybki.
+63. Stefan nie ma chomika.
+64. Stefan nie ma psa.
+Instrukcje
+Rozwi¹¿ przydzielone sobie zadanie za pomoc¹ odpowiedniego programu w Prologu.
+W komórce TWÓJ PROGRAM przedstaw ten program.
+W komórce ODPOWIED podaj rozwi¹zanie w postaci:
+Jarek 0 kot
+Franek 3 chomik
+Stefan 1 rybka
+...
