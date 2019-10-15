@@ -1,7 +1,6 @@
-package Currency;
+package currency;
 
 import java.io.*;
-import java.net.HttpURLConnection;
 import java.net.URL;
 
 public abstract class ResoruceLoader {

@@ -1,4 +1,4 @@
-package Currency;
+package currency;
 
 import java.util.List;
 

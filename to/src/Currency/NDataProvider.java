@@ -1,4 +1,4 @@
-package Currency;
+package currency;
 
 import org.w3c.dom.Document;
 
@@ -33,9 +33,9 @@ public class NDataProvider implements IDataProvider {
         Document xml = XmlParser.parse(resources);
         Repository repository = NConverter.remoteRepository(xml);
         sc.nextLine();
-        System.out.println("Currency code (source)");
+        System.out.println("currency code (source)");
         String src = sc.nextLine();
-        System.out.println("Currency code (destination)");
+        System.out.println("currency code (destination)");
         String dest = sc.nextLine();
         System.out.println("Amount of money");
         double value = sc.nextDouble();

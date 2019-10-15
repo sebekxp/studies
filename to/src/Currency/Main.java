@@ -1,4 +1,4 @@
-package Currency;
+package currency;
 
 public class Main {
 
