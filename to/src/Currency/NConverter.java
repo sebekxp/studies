@@ -1,20 +1,17 @@
 package Currency;
 
 import org.w3c.dom.Document;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class NConverter {
-    public static Repository remoteRepository(byte[] resources, Document xml) {
+    public static Repository remoteRepository(Document xml) {
         NodeList items = xml.getElementsByTagName("pozycja");
         List<Currency> currencies = new ArrayList<Currency>();
 
-        System.out.println(items.getLength());
         for (int i = 0; i < items.getLength(); i++) {
-            System.out.println(i);
             String name = xml.getElementsByTagName("nazwa_waluty").item(i).getTextContent();
             String code = xml.getElementsByTagName("kod_waluty").item(i).getTextContent();
             int multiplier = Integer.parseInt(xml.getElementsByTagName("przelicznik").item(i).getTextContent());
