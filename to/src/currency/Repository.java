@@ -1,6 +1,7 @@
 package currency;
 
 import java.util.List;
+import java.util.Optional;
 
 public class Repository {
     private List<Currency> currencies;
