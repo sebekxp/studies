@@ -20,13 +20,20 @@ public class UserInputProvider {
         System.out.println("Amount of money");
         double value = sc.nextDouble();
 
-        Currency c1 = repository.getCurrencyByCoode(src);
-        Currency c2 = repository.getCurrencyByCoode(dest);
+        Optional<Currency> optionalCurrency1 = repository.getCurrencyByCoode(src);
+        Optional<Currency> optionalCurrency2 = repository.getCurrencyByCoode(dest);
 
-        Calculator calculate = new Calculator(c1, c2, value);
-        System.out.println("Amount of money after convert");
-        System.out.println(value + " " + src + " == " + calculate.calc() + " " + dest);
-        System.out.println(value + " " + src + " == " + UserCalc.uCalc(src, dest, value, repository) + " " + dest);
+        if (optionalCurrency1.isPresent() && optionalCurrency2.isPresent()) {
+            Currency c1 = optionalCurrency1.get();
+            Currency c2 = optionalCurrency2.get();
+            Calculator calculate = new Calculator(c1, c2, value);
+
+            System.out.println("Amount of money after convert");
+            System.out.println(value + " " + src + " == " + calculate.calc() + " " + dest);
+            System.out.println(value + " " + src + " == " + UserCalc.uCalc(src, dest, value, repository) + " " + dest);
+        } else {
+            throw new IllegalArgumentException("We dont support entered currency code.");
+        }
     }
 
     public void start() {

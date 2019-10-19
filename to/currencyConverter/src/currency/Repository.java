@@ -15,11 +15,11 @@ public class Repository {
         return currencies;
     }
 
-    public Currency getCurrencyByCoode(String code) {
+    public Optional<Currency> getCurrencyByCoode(String code) {
         for (Currency currency : currencies) {
             if (code.equals(currency.getCode()))
-                return currency;
+                return Optional.of(currency);
         }
-        return null;
+        return Optional.empty();
     }
 }
