@@ -1,0 +1,80 @@
+[
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 1.0,
+      "y": 2.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 1.0,
+      "y": 2.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 1.0,
+      "y": 2.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 5.0,
+      "x": 1.0,
+      "y": 8.0,
+      "type": "Vector3D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 5.0,
+      "x": 1.0,
+      "y": 8.0,
+      "type": "Vector3D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 5.0,
+      "x": 1.0,
+      "y": 8.0,
+      "type": "Vector3D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 5.0,
+      "x": 1.0,
+      "y": 8.0,
+      "type": "Vector3D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 5.0,
+      "x": 1.0,
+      "y": 8.0,
+      "type": "Vector3D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 5.0,
+      "x": 1.0,
+      "y": 8.0,
+      "type": "Vector3D"
+    }
+  }
+]

@@ -1,0 +1,60 @@
+@startuml
+class Vector implements IVector {
+
+    -x: double
+    -y: double
+
+    + Vector(x:double, y:double)
+    + getX(): double
+    + getY(): double
+    + setX(): double
+    + setY(): double
+    + getAbs(): double
+    + getAngle(): double
+}
+interface IVector {
+    + getAbs(): double
+    + getX(): double
+    + getY(): double
+    + setX(): double
+    + setY(): double
+    + {static} skalar(v1: iVector , v2 iVector)
+}
+
+class Vector3D extends Vector{
+    - z: double
+
+    + Vector3D(x: double, y: double, z: double)
+    + getZ(): double
+    + getAbs(): double
+    + getSecondAngle(): double
+}
+class Vector3D_v2 implements IVector {
+    - Vector: Vector
+    - z: double
+
+    + Vector3D_v2(vector: Vector, z: double)
+    + getZ(): double
+    + getAbs(): double
+    + getSecondAngle(): double
+}
+Vector --o Vector3D_v2
+IVector --* VectorRepository
+
+class VectorRepository {
+    - vectorList: List
+    + addVector(v: IVector )
+    + removeVector(v: IVector )
+    + getVector(v: double[]): IVector
+}
+abstract class DataProvider {
+    {static} loadData(path: String): VectorRepository
+}
+abstract class DataSaver {
+    {static} saveData(path: String): void
+}
+@enduml
+     -sina = a / c= y / |V| = y/sqrt(x^2 + y^2)
+
+       a |_\ c
+          b
