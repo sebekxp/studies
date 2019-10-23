@@ -13,7 +13,7 @@ public class DataLoader {
     public static VectorRepository loadData(String filePath) {
         Gson gson = new GsonBuilder()
                 .setLenient()
-                .registerTypeAdapter(IVector.class, new IVectorAdapter())
+                .registerTypeAdapter(IVector.class, new VectorAdapter())
                 .create();
 
         try (Reader reader = new FileReader(filePath)) {

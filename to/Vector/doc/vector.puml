@@ -3,22 +3,23 @@ class Vector implements IVector {
 
     -x: double
     -y: double
-
-    + Vector(x:double, y:double)
-    + getX(): double
-    + getY(): double
-    + setX(): double
-    + setY(): double
-    + getAbs(): double
+    - type: VectorType
     + getAngle(): double
+    + calculationsHelper(v1: IVector, op: Operator ):  IVector
 }
+Operator --> Vector
+Operator --> Vector3D
 interface IVector {
     + getAbs(): double
     + getX(): double
     + getY(): double
     + setX(): double
     + setY(): double
-    + {static} skalar(v1: iVector , v2 iVector)
+    + setType(type: VectorType)
+    + getType(): VectorType
+    + scalar(v: IVector ): IVector
+    + addVectors(v: IVector ): IVector
+    + subtractVectors(v: IVector ): IVector
 }
 
 class Vector3D extends Vector{
@@ -26,8 +27,8 @@ class Vector3D extends Vector{
 
     + Vector3D(x: double, y: double, z: double)
     + getZ(): double
-    + getAbs(): double
     + getSecondAngle(): double
+    + calculationsHelper(v1: IVector, op: Operator ):  IVector
 }
 class Vector3D_v2 implements IVector {
     - Vector: Vector
@@ -47,14 +48,63 @@ class VectorRepository {
     + removeVector(v: IVector )
     + getVector(v: double[]): IVector
 }
-abstract class DataProvider {
+abstract class DataLoader {
     {static} loadData(path: String): VectorRepository
 }
 abstract class DataSaver {
     {static} saveData(path: String): void
 }
-@enduml
-     -sina = a / c= y / |V| = y/sqrt(x^2 + y^2)
 
-       a |_\ c
-          b
+class CalculateVector {
+    +addVectors(v1: IVector, v2: IVector ):IVector
+    +subtractVectors(v1: IVector, v2: IVector ):IVector
+    +scalarVectors(v1: IVector, v2: IVector ):IVector
+}
+IVector --> CalculateVector
+
+class VectorAdapter {
+ - {static} CLASSNAME: String
+ - {static} DATA: String
+ +deserialize(je: JsonElement , t: Type, jdc: JsonDeserializationContext): IVector
+ +serialize(o: Object, t: Type, jsc: JsonSerializationContext): JsonObject
+}
+IVector --> VectorAdapter
+class Menu{
++printMenu()
+}
+class UserInputProvider {
+    - vr: VectorRepository
+    - sc: Scanner
+    - run: boolean
+
+    +start()
+    +exit()
+    +addToRepo()
+    +handle2DVector(): double[]
+    +handle3DVector(): double[]
+    +chooseVector(): int
+    +removeFromRepo()
+    +searchInRepo()
+    +calculationHelper(): IVector[]
+    +addVectors()
+    +subtractVectors()
+    +scalarVectors()
+}
+abstract class VectorDisplayer {
++{static} displayInfo(v: IVector)
++{static} listRepository(l: List<IVector>)
+}
+enum VectorType {
+    Vector2D
+    Vector3D
+}
+interface Operator {
+  apply(x: double , y: double ): double
+}
+Menu -- UserInputProvider
+VectorType -- IVector
+VectorDisplayer -- UserInputProvider
+DataLoader -- VectorAdapter
+DataSaver -- VectorAdapter
+VectorRepository --> DataLoader
+@enduml

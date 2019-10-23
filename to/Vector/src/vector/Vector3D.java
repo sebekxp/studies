@@ -29,50 +29,37 @@ public class Vector3D extends Vector {
     }
 
     @Override
+    public IVector scalar(IVector v1) {
+        Operator mult = (x, y) -> x * y;
+        return this.calculationsHelper(v1, mult);
+    }
+
+    @Override
     public IVector addVectors(IVector v1) {
-        IVector vector = null;
-        if (v1.getType().compareTo(this.getType()) > 0) {
-            Vector3D v = (Vector3D) v1;
-            vector = new Vector3D(this.getX() + v.getX(), this.getY() + v.getY(), v.getZ());
-        } else if (v1.getType().compareTo(this.getType()) == 0) {
-            Vector3D v = (Vector3D) v1;
-            vector = new Vector3D(this.getX() + v.getX(), this.getY() + v.getY(), this.getZ() + v.getZ());
-        } else if (v1.getType().compareTo(this.getType()) < 0) {
-            Vector3D v = this;
-            vector = new Vector3D(v.getX() + v1.getX(), v.getY() + v1.getY(), v.getZ());
-        }
-        return vector;
+        Operator plus = (x, y) -> x + y;
+
+        return this.calculationsHelper(v1, plus);
     }
 
     @Override
     public IVector subtractVectors(IVector v1) {
-        IVector vector = null;
-        if (v1.getType().compareTo(this.getType()) > 0) {
-            Vector3D v = (Vector3D) v1;
-            vector = new Vector3D(this.getX() - v.getX(), this.getY() - v.getY(), v.getZ());
-        } else if (v1.getType().compareTo(this.getType()) == 0) {
-            Vector3D v = (Vector3D) v1;
-            vector = new Vector3D(this.getX() - v.getX(), this.getY() - v.getY(), this.getZ() - v.getZ());
-        } else if (v1.getType().compareTo(this.getType()) < 0) {
-            Vector3D v = this;
-            vector = new Vector3D(v.getX() - v1.getX(), v.getY() - v1.getY(), v.getZ());
-        }
-        return vector;
+        Operator minus = (x, y) -> x - y;
+        return this.calculationsHelper(v1, minus);
     }
 
-    @Override
-    public IVector scalar(IVector v1) {
+    private IVector calculationsHelper(IVector v1, Operator op) {
         IVector vector = null;
-        if (v1.getType().compareTo(this.getType()) > 0) {
+        if (v1.getType() == this.getType()) {
             Vector3D v = (Vector3D) v1;
-            vector = new Vector3D(this.getX() * v.getX(), this.getY() * v.getY(), v.getZ());
-        } else if (v1.getType().compareTo(this.getType()) == 0) {
+            vector = new Vector3D(op.apply(this.getX(), v.getX()), op.apply(this.getY(), v.getY()), op.apply(this.getZ(), v.getZ()));
+        } else if (v1.getType() == VectorType.Vector3D) {
             Vector3D v = (Vector3D) v1;
-            vector = new Vector3D(this.getX() * v.getX(), this.getY() * v.getY(), this.getZ() * v.getZ());
-        } else if (v1.getType().compareTo(this.getType()) < 0) {
+            vector = new Vector3D(op.apply(this.getX(), v.getX()), op.apply(this.getY(), v.getY()), op.apply(0, v.getZ()));
+        } else if (this.getType() == VectorType.Vector3D) {
             Vector3D v = this;
-            vector = new Vector3D(v.getX() * v1.getX(), v.getY() * v1.getY(), v.getZ());
+            vector = new Vector3D(op.apply(v.getX(), v1.getX()), op.apply(v.getY(), v1.getY()), op.apply(v.getZ(), 0));
         }
+
         return vector;
     }
 }

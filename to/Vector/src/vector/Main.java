@@ -4,7 +4,6 @@ public class Main {
 
     public static void main(String[] args) {
         VectorRepository vectorRepository = DataLoader.loadData("D:\\Studia\\Semestr 5\\to\\Vector\\src\\data\\data.json");
-
         vectorRepository.getVectors().add(new Vector(1, 2));
         vectorRepository.getVectors().add(new Vector(3, 5));
         vectorRepository.getVectors().add(new Vector(2, 5));

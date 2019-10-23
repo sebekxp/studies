@@ -12,7 +12,7 @@ public class DataSaver {
     public static void saveData(String filePath, List<IVector> data) {
         Gson gson = new GsonBuilder()
                 .setPrettyPrinting()
-                .registerTypeAdapter(IVector.class, new IVectorAdapter())
+                .registerTypeAdapter(IVector.class, new VectorAdapter())
                 .create();
 
         try (FileWriter writer = new FileWriter(filePath)) {
