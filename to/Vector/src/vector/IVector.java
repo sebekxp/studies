@@ -14,5 +14,12 @@ public interface IVector {
 
     void setType(VectorType type);
 
-    double skalar(IVector v1, IVector v2);
+    VectorType getType();
+
+    IVector scalar(IVector v);
+
+    IVector addVectors(IVector v);
+
+    IVector subtractVectors(IVector v);
+
 }

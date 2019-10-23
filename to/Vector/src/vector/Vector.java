@@ -46,8 +46,53 @@ public class Vector implements IVector {
     }
 
     @Override
-    public double skalar(IVector v1, IVector v2) {
-        return 0;
+    public VectorType getType() {
+        return type;
+    }
+
+    @Override
+    public IVector scalar(IVector v1) {
+        IVector vector = null;
+        if (v1.getType().compareTo(this.getType()) > 0) {
+            Vector3D v = (Vector3D) v1;
+            vector = new Vector3D(this.getX() * v.getX(), this.getY() * v.getY(), v.getZ());
+        } else if (v1.getType().compareTo(this.getType()) == 0) {
+            vector = new Vector(this.getX() * v1.getX(), this.getY() * v1.getY());
+        } else if (v1.getType().compareTo(this.getType()) < 0) {
+            Vector3D v = (Vector3D) this;
+            vector = new Vector3D(v.getX() * v1.getX(), v.getY() * v1.getY(), v.getZ());
+        }
+        return vector;
+    }
+
+    @Override
+    public IVector addVectors(IVector v1) {
+        IVector vector = null;
+        if (v1.getType().compareTo(this.getType()) > 0) {
+            Vector3D v = (Vector3D) v1;
+            vector = new Vector3D(this.getX() + v.getX(), this.getY() + v.getY(), v.getZ());
+        } else if (v1.getType().compareTo(this.getType()) == 0) {
+            vector = new Vector(this.getX() + v1.getX(), this.getY() + v1.getY());
+        } else if (v1.getType().compareTo(this.getType()) < 0) {
+            Vector3D v = (Vector3D) this;
+            vector = new Vector3D(v.getX() + v1.getX(), v.getY() + v1.getY(), v.getZ());
+        }
+        return vector;
+    }
+
+    @Override
+    public IVector subtractVectors(IVector v1) {
+        IVector vector = null;
+        if (v1.getType().compareTo(this.getType()) > 0) {
+            Vector3D v = (Vector3D) v1;
+            vector = new Vector3D(this.getX() - v.getX(), this.getY() - v.getY(), v.getZ());
+        } else if (v1.getType().compareTo(this.getType()) == 0) {
+            vector = new Vector(this.getX() - v1.getX(), this.getY() - v1.getY());
+        } else if (v1.getType().compareTo(this.getType()) < 0) {
+            Vector3D v = (Vector3D) this;
+            vector = new Vector3D(v.getX() - v1.getX(), v.getY() - v1.getY(), v.getZ());
+        }
+        return vector;
     }
 
     public double getAngle() {

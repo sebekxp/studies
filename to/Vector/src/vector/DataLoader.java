@@ -7,7 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.lang.reflect.Type;
-import java.util.Collection;
+import java.util.List;
 
 public class DataLoader {
     public static VectorRepository loadData(String filePath) {
@@ -17,17 +17,17 @@ public class DataLoader {
                 .create();
 
         try (Reader reader = new FileReader(filePath)) {
-            Type collectionType = new TypeToken<Collection<IVector>>(){}.getType();
-            Collection<IVector> vectors = gson.fromJson(reader, collectionType);
-//            IVector[] vectors  = gson.fromJson(reader, IVector[].class);
-            for (IVector v :
-                    vectors) {
-                System.out.println(v.getClass());
-                System.out.println(v.getX() + ", " + v.getY() + ", " + v.getAbs());
+            Type collectionType = new TypeToken<List<IVector>>() {
+            }.getType();
+
+            List<IVector> vectors = gson.fromJson(reader, collectionType);
+            VectorRepository vectorRepository = new VectorRepository();
+
+            for (IVector vector : vectors) {
+                vectorRepository.addVector(vector);
             }
 
-            return new VectorRepository();
-
+            return vectorRepository;
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -10,9 +10,127 @@
   {
     "className": "vector.Vector",
     "data": {
+      "x": 3.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 2.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 5.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 7.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 3.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 3.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 3.0,
+      "y": 3.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 2.0,
+      "y": 1.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 3.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 3.0,
       "x": 1.0,
       "y": 2.0,
-      "type": "Vector2D"
+      "type": "Vector3D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 3.0,
+      "x": 1.0,
+      "y": 2.0,
+      "type": "Vector3D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 3.0,
+      "x": 1.0,
+      "y": 2.0,
+      "type": "Vector3D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 3.0,
+      "x": 1.0,
+      "y": 2.0,
+      "type": "Vector3D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 3.0,
+      "x": 1.0,
+      "y": 2.0,
+      "type": "Vector3D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 3.0,
+      "x": 1.0,
+      "y": 5.0,
+      "type": "Vector3D"
     }
   },
   {
@@ -24,56 +142,396 @@
     }
   },
   {
+    "className": "vector.Vector",
+    "data": {
+      "x": 3.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 2.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 5.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 7.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 3.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 3.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 3.0,
+      "y": 3.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 2.0,
+      "y": 1.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 3.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
     "className": "vector.Vector3D",
     "data": {
-      "z": 5.0,
+      "z": 3.0,
       "x": 1.0,
-      "y": 8.0,
+      "y": 2.0,
       "type": "Vector3D"
     }
   },
   {
     "className": "vector.Vector3D",
     "data": {
-      "z": 5.0,
+      "z": 3.0,
       "x": 1.0,
-      "y": 8.0,
+      "y": 2.0,
       "type": "Vector3D"
     }
   },
   {
     "className": "vector.Vector3D",
     "data": {
-      "z": 5.0,
+      "z": 3.0,
       "x": 1.0,
-      "y": 8.0,
+      "y": 2.0,
       "type": "Vector3D"
     }
   },
   {
     "className": "vector.Vector3D",
     "data": {
-      "z": 5.0,
+      "z": 3.0,
       "x": 1.0,
-      "y": 8.0,
+      "y": 2.0,
       "type": "Vector3D"
     }
   },
   {
     "className": "vector.Vector3D",
     "data": {
-      "z": 5.0,
+      "z": 3.0,
       "x": 1.0,
-      "y": 8.0,
+      "y": 2.0,
       "type": "Vector3D"
     }
   },
   {
     "className": "vector.Vector3D",
     "data": {
-      "z": 5.0,
+      "z": 3.0,
       "x": 1.0,
-      "y": 8.0,
+      "y": 5.0,
+      "type": "Vector3D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 1.0,
+      "y": 2.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 3.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 2.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 5.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 7.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 3.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 3.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 3.0,
+      "y": 3.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 2.0,
+      "y": 1.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 3.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 3.0,
+      "x": 1.0,
+      "y": 2.0,
+      "type": "Vector3D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 3.0,
+      "x": 1.0,
+      "y": 2.0,
+      "type": "Vector3D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 3.0,
+      "x": 1.0,
+      "y": 2.0,
+      "type": "Vector3D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 3.0,
+      "x": 1.0,
+      "y": 2.0,
+      "type": "Vector3D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 3.0,
+      "x": 1.0,
+      "y": 2.0,
+      "type": "Vector3D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 3.0,
+      "x": 1.0,
+      "y": 5.0,
+      "type": "Vector3D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 1.0,
+      "y": 2.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 3.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 2.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 5.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 7.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 3.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 3.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 3.0,
+      "y": 3.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 2.0,
+      "y": 1.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector",
+    "data": {
+      "x": 3.0,
+      "y": 5.0,
+      "type": "Vector2D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 3.0,
+      "x": 1.0,
+      "y": 2.0,
+      "type": "Vector3D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 3.0,
+      "x": 1.0,
+      "y": 2.0,
+      "type": "Vector3D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 3.0,
+      "x": 1.0,
+      "y": 2.0,
+      "type": "Vector3D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 3.0,
+      "x": 1.0,
+      "y": 2.0,
+      "type": "Vector3D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 3.0,
+      "x": 1.0,
+      "y": 2.0,
+      "type": "Vector3D"
+    }
+  },
+  {
+    "className": "vector.Vector3D",
+    "data": {
+      "z": 3.0,
+      "x": 1.0,
+      "y": 5.0,
       "type": "Vector3D"
     }
   }
