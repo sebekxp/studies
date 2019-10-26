@@ -1,0 +1,146 @@
+@startuml
+class CatCommand extends Command implements ICommand {
++CatCommand(name: String)
++run(con: Console, param: String)
+}
+
+class CdCommand extends Command implements ICommand {
++CdCommand(name: String)
++run(con: Console, param: String)
+}
+
+class TreeCommand extends Command implements ICommand{
++CatCommand(name: String)
++run(con: Console, param: String)
+}
+
+class LsCommand extends Command implements ICommand{
++CdCommand(name: String)
++run(con: Console, param: String)
+}
+
+class RmCommand extends Command implements ICommand{
++CatCommand(name: String)
++run(con: Console, param: String)
+}
+
+class MkdirCommand extends Command implements ICommand{
++CdCommand(name: String)
++run(con: Console, param: String)
+}
+
+class TouchCommand extends Command implements ICommand{
++CdCommand(name: String)
++run(con: Console, param: String)
+}
+
+class CatCommand extends Command implements ICommand{
++CdCommand(name: String)
++run(con: Console, param: String)
+}
+class CommandRepository {
+-commands: List<Commands>
++CommandsRepository()
++getCommands(): List<Command>
++setCommands(commands: List<Command>)
++getByName(n: String): Optional<Command>
+}
+Command --* CommandRepository
+
+interface ICommand {
++run(c: Console , s: String )
+}
+abstract class Command{
++Command(name: String)
++getName(): String
++setName(n: String)
+}
+
+class Directory extends Node{
+-nodes: List<Node>
++Directory(name: String)
++getNodes(): List<Node>
++add(n: Node)
++remove(n: Node)
++printNodes()
++getByNode(n: Node): Optional<Node>
++getByName(n: String): Optional<Node>
++printTree()
+-printDirectoryTree(n: Node, i: int , sb: StringBuilder sb)
+-getIndentString(i: int, n: String): String
+-findLongestName(): int
+}
+Node --* Directory
+
+class File extends Node{
+-content: byte[]
++File(n: String)
++getContent(): byte[]
++setContent(content: byte[])
++printContent()
+}
+abstract class Node {
+-parent: Directory
+-name: String
+-path: String
++setParent(p: Directory)
++setName(s: String)
++getParent(): Node
++isDirectory(): boolean
++isFile(): boolean
++getName(): String
++getPath(): String
++equals(o: Object): boolean
++hashCode(): int
++setPath()
+}
+Directory --* Node
+
+class Console{
+-run: boolean
+-currentDir: Directory
+-userInput: UserInput
++Console(d: Directory)
++run()
++setCurrentDir(currentDir: Directory)
++getCurrentDir(): Directory
+-updateDir(): String
+}
+Directory --* Console
+UserInput --* Console
+
+class UserInput {
+-sc: Scanner
+-line: String
+-cmd: String
+-parts: String[]
+-param: String
+-commandsRepository: CommandsRepository
++UserInput()
++getLine(): String
+getConsoleLine(console: Console)
+searchAction(console: Console)
+}
+CommandRepository --* UserInput
+
+class VerificationError extends RuntimeException{
++VerificationError(message: String )
+}
+VerificationError -- Directory
+abstract class Verifier {
++{static} checkMaxLength(name: String)
++{static] checkMinLength(name: String)
++{static}  checkCharacters(name: String)
++{static} checkDuplicate(nodes: List<Node>, name: String)
++{static} verify(name: String)
+}
+VerificationError --* Verifier
+class NodeProvider {
++{static} main(args: String[])
+}
+Console --* NodeProvider
+Node --* NodeProvider
+File --* NodeProvider
+Directory --* NodeProvider
+@enduml
+Root[dir1, dir2[dir3[file]]]
