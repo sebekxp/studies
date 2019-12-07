@@ -1,0 +1,54 @@
+@startuml
+'Orginator
+class Moveable {
+    - position: Vector2D;
+    - velocity: Vector2D;
+    + move()
+    + toState(): MoveableState
+    + loadState(): MoveableState
+}
+
+class Surface {
+    - movables: List<Moveable>
+'    - width: int
+'    - height: int
+    - size: Vector2D
+    + nextIterator()
+    + addMovable(m : Moveable)
+}
+'Memento
+class MoveableState {
+    - position : Vector2D
+    - velocity : Vector2D
+    + getposition() : Vector2D
+    + getVelocity() : Vector2D
+    + setPosition()
+    + setVelocity()
+}
+
+class StateLoader {
+    - filename: String
+    + loadState() : List<MoveableState>
+}
+
+class StateSaver {
+'    Pobiera kolekcje MoveableState i zapisuje do pliku
+    - filename: String
+    + saveState(l : List<MoveableState>)
+}
+
+class Caretaker {
+
+}
+
+Caretaker --> Surface
+Surface --> Moveable
+Caretaker --> StateLoader
+Caretaker --> StateSaver
+Moveable --> MoveableState
+Moveable --o Surface
+
+
+'Pamiatka reprezenuje stan w automacie skonczonym
+'Model von Neumanna
+@enduml
