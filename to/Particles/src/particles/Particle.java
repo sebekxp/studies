@@ -113,8 +113,8 @@ public class Particle {
         }
 
         for (var particle : particles) {
-            if (this.isCollisionWithParticles(particle))
-                if (this.timeToHit(particle) < 0.1)
+//            if (this.isCollisionWithParticles(particle))
+                if (this.timeToHit(particle) < 0)
                     this.bounceOff(particle);
         }
     }

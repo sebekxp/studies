@@ -1,54 +1,143 @@
 @startuml
-'Orginator
-class Moveable {
-    - position: Vector2D;
-    - velocity: Vector2D;
-    + move()
-    + toState(): MoveableState
-    + loadState(): MoveableState
-}
+package "memento"{
+class CareTaker {
+    - mementos : List<Memento>
 
-class Surface {
-    - movables: List<Moveable>
-'    - width: int
-'    - height: int
-    - size: Vector2D
-    + nextIterator()
-    + addMovable(m : Moveable)
-}
-'Memento
-class MoveableState {
-    - position : Vector2D
-    - velocity : Vector2D
-    + getposition() : Vector2D
-    + getVelocity() : Vector2D
-    + setPosition()
-    + setVelocity()
-}
+    + void add(state : Memento) : void
+    + get(index : int) : Memento
+    + getMementos() : List<Memento>
+    }
 
-class StateLoader {
-    - filename: String
-    + loadState() : List<MoveableState>
-}
+class Memento {
+    - state : List<ParticleState>
 
-class StateSaver {
-'    Pobiera kolekcje MoveableState i zapisuje do pliku
-    - filename: String
-    + saveState(l : List<MoveableState>)
-}
-
-class Caretaker {
+    + Memento()
+    + Memento(state : List<Particle>)
+    + getState() : List<ParticleState>
+    + setState(state : List<ParticleState>) : void
+    }
 
 }
 
-Caretaker --> Surface
-Surface --> Moveable
-Caretaker --> StateLoader
-Caretaker --> StateSaver
-Moveable --> MoveableState
-Moveable --o Surface
+package "particles"{
+class Particle {
+    - {static} final INFINITY  : double
+    - position : Point
+    - velocity : Vector
+    - radius : double
+    - mass : double
+
+    + Particle()
+    + Particle(p : Point, vel : Vector, r : double, mass : double)
+    + getPosition() : Point
+    + getVelocity() : Vector
+    + setVelocity(vel : Vector) : void
+    + getRadius() : double
+    + toState() : ParticleState
+    + {static} loadState(state : ParticleState) : Particle
+    + move(timeDelta : double ) : void
+    + isCollisionWithParticles(p : Particle ) : boolean
+    + bounceOffHorizontalWall() : void
+    + bounceOffVerticalWall() : void
+    + predictCollision(particles : List<Particle>) : void
+    + bounceOff(other : Particle) : void
+    + timeToHit(other : Particle) : double
+    }
+
+class ParticleRepository {
+    - particles : List<Particle>
+    + ParticleRepository()
+    + getParticles() : List<Particle>
+    + add(particle : Particle) : void
+    + remove(particle : Particle) : void
+    }
+class ParticleState {
+        - Point position
+        - Vector velocity
+        - double radius
+        - double mass
+        + ParticleState(pos : Point, vel : Vector, r : double, mass  : double)
+        + getPosition() : Point
+        + setPosition(pos : Point)  : void
+        + getVelocity() : Vector
+        + setVelocity(velocity : Vector) : void
+        + getRadius() : double
+        + setRadius(radius : double) : void
+        + getMass() : double
+        + setMass(mass : double) : void
+        + print() : String
+    }
+}
 
 
-'Pamiatka reprezenuje stan w automacie skonczonym
-'Model von Neumanna
+package "physics" {
+class Point {
+    - double x
+    - double y
+    + Point(x : double, y : double )
+    + getX() : double
+    + getY() : double
+    + setPosition(x : double, y : double) : void
+    + getDistance(pt : Point) : double
+    + toString() : String
+    + print() : void
+    }
+
+class Vector {
+    - position : Point
+    + Vector(position : Point)
+    + getPosition() : Point
+    + setPosition(position : Point) : void
+    + addVector(v : Vector) : void
+    + subVector(v : Vector) : void
+    + getLength() : double
+    + getAngle() : double
+    + print() : void
+    }
+}
+
+package "ui" {
+class Board {
+    - timer : Timer
+    - particleRepository : ParticleRepository
+    - careTaker : CareTaker
+    + Board()
+    + getTimer() : Timer
+    + getParticle() : List<Particle>
+    + actionPerformed(e : ActionEvent) : void
+    + getCareTaker() : CareTaker
+    + paintComponent(Graphics g) : void
+    + initParticles(nParticles : int) : void
+    + addParticle() : void
+    + initButtons() : void
+
+    }
+}
+
+package "utils" {
+class DataLoader {
+  + {static} load(particleRepository : ParticleRepository) : void
+  }
+
+class DataSaver {
++ {static} save(particleState : List<ParticleState>) : void
+}
+}
+
+Particle --o ParticleRepository
+ParticleRepository --o Board
+CareTaker --o Board
+Particle --> Board
+Point --o Particle
+Vector --o Particle
+Point --o ParticleState
+Vector --o ParticleState
+Memento --o CareTaker
+ParticleState --o Memento
+Particle --> Memento
+ParticleState --> DataLoader
+ParticleState --> DataSaver
+Point --o Vector
+ParticleState --> Particle
+
 @enduml
