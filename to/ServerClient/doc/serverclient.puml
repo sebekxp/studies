@@ -1,0 +1,36 @@
+@startuml
+interface IRequest {
+    + handleRequest(array: byte[]): Object
+}
+
+Abstract class Request implements IRequest {
+    - data: byte[]
+    - type: byte
+    - next: IRequest
+    + handleRequest(array: byte[]): Object
+    + {abstract} handle(): Object
+    + encode(): void
+
+}
+class JpegRequest extends Request {
+    - data: byte[]
+    - type: byte
+    + encode(o: Object): void
+    (To bedzie wywolane dopieor po sprawdzeniu w abstract typu)
+    + handleRequest(array: byte[]): Object
+    + getData(): byte[]
+}
+
+Request --o JpegRequest
+TextRequest --> Request : Delegation same as agregation
+'To samo tylko inaczje sie oznacza
+
+class TextRequest extends Request {
+    - data: byte[]
+    - type: byte
+    + encode(o: Object): void
+    (To bedzie wywolane dopieor po sprawdzeniu w abstract typu)
+    + handleRequest(array: byte[]): Object
+    + getData(): byte[]
+}
+@enduml
