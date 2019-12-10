@@ -110,7 +110,7 @@ class Board {
     + initParticles(nParticles : int) : void
     + addParticle() : void
     + initButtons() : void
-
+    + calcDiff(current : Date , old : Date) : long
     }
 }
 

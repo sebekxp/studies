@@ -11,6 +11,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 public class Board extends JPanel implements ActionListener {
@@ -32,11 +33,22 @@ public class Board extends JPanel implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
+        int mff = 1000 / 120;
+        Date lft = new Date();
+
         for (var particle : particleRepository.getParticles()) {
-            particle.move(0.7);
+            particle.move(4);
             particle.predictCollision(particleRepository.getParticles());
         }
+        long diff = this.calcDiff(new Date(), lft);
 
+        if (diff < mff) {
+            try {
+                Thread.sleep(mff - diff);
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+        }
         repaint();
     }
 
@@ -112,6 +124,10 @@ public class Board extends JPanel implements ActionListener {
         this.add(load);
         this.add(save);
         this.add(add);
+    }
+
+    public long calcDiff(Date current, Date old) {
+        return current.getTime() - old.getTime();
     }
 }
 

@@ -11,7 +11,7 @@ public class Main {
 
         frame.add(board);
         board.initButtons();
-        board.initParticles(10);
+        board.initParticles(12);
 
         board.setPreferredSize(new Dimension(500, 500));
         frame.pack();

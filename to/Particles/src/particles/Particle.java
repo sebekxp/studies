@@ -15,17 +15,17 @@ public class Particle {
 
     public Particle() {
         Random random = new Random();
-        var minPos = 20;
-        var maxPos = 480;
-        var minVel = 0.01;
-        var maxVel = 0.5;
-        var minRad = 5;
-        var maxRad = 20;
+        double minPos = 20;
+        double maxPos = 480;
+        double minVel = 0.01;
+        double maxVel = 0.5;
+        double minRad = 5;
+        double maxRad = 20;
 
-        var randX = minPos + (maxPos - minPos) * random.nextDouble();
-        var randY = minPos + (maxPos - minPos) * random.nextDouble();
-        var randVelX = minVel + (maxVel - minVel) * random.nextDouble();
-        var randVelY = minVel + (maxVel - minVel) * random.nextDouble();
+        double randX = minPos + (maxPos - minPos) * random.nextDouble();
+        double randY = minPos + (maxPos - minPos) * random.nextDouble();
+        double randVelX = minVel + (maxVel - minVel) * random.nextDouble();
+        double randVelY = minVel + (maxVel - minVel) * random.nextDouble();
 
         this.position = new Point(randX, randY);
         this.velocity = new Vector(new Point(randVelX, randVelY));
@@ -65,38 +65,38 @@ public class Particle {
     }
 
     public void move(double timeDelta) {
-        var dx = timeDelta * velocity.getPosition().getX();
-        var dy = timeDelta * velocity.getPosition().getY();
+        double dx = timeDelta * velocity.getPosition().getX();
+        double dy = timeDelta * velocity.getPosition().getY();
 
         position.setPosition(position.getX() + dx, position.getY() + dy);
     }
 
     public boolean isCollisionWithParticles(Particle p) {
-        var tx = this.getPosition().getX();
-        var ty = this.getPosition().getY();
-        var tr = this.getRadius();
+        double tx = this.getPosition().getX();
+        double ty = this.getPosition().getY();
+        double tr = this.getRadius();
 
-        var px = p.getPosition().getX();
-        var py = p.getPosition().getY();
-        var pr = p.getRadius();
+        double px = p.getPosition().getX();
+        double py = p.getPosition().getY();
+        double pr = p.getRadius();
 
-        var radius = (tr + pr) * (tr + pr);
-        var distance = this.getPosition().getDistance(p.getPosition());
-        var distanceSquare = distance * distance;
+        double radius = (tr + pr) * (tr + pr);
+        double distance = this.getPosition().getDistance(p.getPosition());
+        double distanceSquare = distance * distance;
 
         return distanceSquare < radius;
     }
 
     public void bounceOffHorizontalWall() {
-        var vy = velocity.getPosition().getY();
-        var vx = velocity.getPosition().getX();
+        double vy = velocity.getPosition().getY();
+        double vx = velocity.getPosition().getX();
 
         velocity.setPosition(new Point(vx, -vy));
     }
 
     public void bounceOffVerticalWall() {
-        var vy = velocity.getPosition().getY();
-        var vx = velocity.getPosition().getX();
+        double vy = velocity.getPosition().getY();
+        double vx = velocity.getPosition().getX();
 
         velocity.setPosition(new Point(-vx, vy));
     }
@@ -113,24 +113,25 @@ public class Particle {
         }
 
         for (var particle : particles) {
-//            if (this.isCollisionWithParticles(particle))
-                if (this.timeToHit(particle) < 0)
+            if (this.isCollisionWithParticles(particle)) {
+                if (this.timeToHit(particle) < 0.1) {
                     this.bounceOff(particle);
+                }
+            }
         }
     }
 
     public void bounceOff(Particle other) {
-        var dx = other.getPosition().getX() - this.getPosition().getX();
-        var dy = other.getPosition().getY() - this.getPosition().getY();
-        var dvx = other.getVelocity().getPosition().getX() - this.getVelocity().getPosition().getX();
-        var dvy = other.getVelocity().getPosition().getY() - this.getVelocity().getPosition().getY();
-        var dvdr = dx * dvx + dy * dvy;
-        var dist = this.radius + other.radius;
+        double dx = other.getPosition().getX() - this.getPosition().getX();
+        double dy = other.getPosition().getY() - this.getPosition().getY();
+        double dvx = other.getVelocity().getPosition().getX() - this.getVelocity().getPosition().getX();
+        double dvy = other.getVelocity().getPosition().getY() - this.getVelocity().getPosition().getY();
+        double dvdr = dx * dvx + dy * dvy;
+        double dist = this.radius + other.radius;
 
-        var magnitude = 2 * this.mass * other.mass * dvdr / ((this.mass + other.mass) * dist);
-
-        var fx = magnitude * dx / dist;
-        var fy = magnitude * dy / dist;
+        double magnitude = 2 * this.mass * other.mass * dvdr / ((this.mass + other.mass) * dist);
+        double fx = magnitude * dx / dist;
+        double fy = magnitude * dy / dist;
 
         this.setVelocity(new Vector(new Point(this.getVelocity().getPosition().getX() +
                 (fx / this.mass), this.getVelocity().getPosition().getY() + (fy / this.mass))));
@@ -140,21 +141,20 @@ public class Particle {
     }
 
     public double timeToHit(Particle other) {
-        if(this == other) return INFINITY;
-        var dx = other.getPosition().getX() - this.getPosition().getX();
-        var dy = other.getPosition().getY() - this.getPosition().getY();
-        var dvx = other.getVelocity().getPosition().getX() - this.getVelocity().getPosition().getX();
-        var dvy = other.getVelocity().getPosition().getY() - this.getVelocity().getPosition().getY();
-
-        var dvdr = dx * dvx + dy * dvy;
+        if (this == other) return INFINITY;
+        double dx = other.getPosition().getX() - this.getPosition().getX();
+        double dy = other.getPosition().getY() - this.getPosition().getY();
+        double dvx = other.getVelocity().getPosition().getX() - this.getVelocity().getPosition().getX();
+        double dvy = other.getVelocity().getPosition().getY() - this.getVelocity().getPosition().getY();
+        double dvdr = dx * dvx + dy * dvy;
         if (dvdr > 0) return INFINITY;
 
-        var dvdv = dvx * dvx + dvy * dvy;
+        double dvdv = dvx * dvx + dvy * dvy;
         if (dvdv == 0) return INFINITY;
 
-        var drdr = dx * dx + dy * dy;
-        var sigma = this.radius + other.radius;
-        var d = (dvdr * dvdr) - dvdv * (drdr - sigma * sigma);
+        double drdr = dx * dx + dy * dy;
+        double sigma = this.radius + other.radius;
+        double d = (dvdr * dvdr) - dvdv * (drdr - sigma * sigma);
         if (d < 0) return INFINITY;
 
         return -(dvdr + Math.sqrt(d)) / dvdv;
