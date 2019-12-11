@@ -1,0 +1,45 @@
+@startuml
+interface Drawable {
+    + draw()
+}
+'interface Positionable {
+'    + getX()
+'    + getY()
+'}
+interface Figure implements Drawable {
+    + getArea()
+    + getPerimeter()
+}
+
+class Circle implements Figure{
+    - radius: double
+    - s :  Point
+}
+
+class Rectangle implements Figure{
+    - s :  Point
+    - width : double
+    - height : double
+}
+
+class Triangle implements Figure {
+    - w1 : Point
+    - w2 : Point
+    - w3 : Point
+}
+
+class DrawableCircle implements Drawable {
+    + draw()
+}
+Circle --> DrawableCircle
+
+class DrawableRectangle implements Drawable {
+    + draw()
+}
+Rectangle --> DrawableRectangle
+
+class DrawableTriangle  implements Drawable{
+    + draw()
+}
+Triangle --> DrawableTriangle
+@enduml
