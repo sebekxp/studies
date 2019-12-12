@@ -20,7 +20,7 @@ public class DrawCircle implements Drawable {
         var r = circle.getRadius();
 
         Ellipse2D.Double circle = new Ellipse2D.Double(x, y, r, r);
-//        g2d.setColor(Color.GRAY);
+        g2d.setColor(Color.RED);
         g2d.fill(circle);
     }
 }

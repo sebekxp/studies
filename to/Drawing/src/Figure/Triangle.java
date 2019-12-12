@@ -15,7 +15,7 @@ public class Triangle implements Figure {
         this.v1 = v1;
         this.v2 = v2;
         this.v3 = v3;
-        drawTriangle = new DrawTriangle();
+        drawTriangle = new DrawTriangle(this);
     }
 
     public Vector2D getV1() {
@@ -37,7 +37,7 @@ public class Triangle implements Figure {
         var c = v2.getY() - v1.getY();
         var d = v3.getX() - v1.getX();
 
-        return Math.abs(a * b - c * d)/2;
+        return Math.abs(a * b - c * d) / 2;
     }
 
     @Override
