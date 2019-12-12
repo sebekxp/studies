@@ -1,6 +1,6 @@
 package drawing;
 
-import Figure.Triangle;
+import figure.Triangle;
 
 import java.awt.*;
 
@@ -26,7 +26,7 @@ public class DrawTriangle implements Drawable {
 
         Polygon polygon = new Polygon(x, y, 3);
         g.drawPolygon(polygon);
-        g.setColor(Color.PINK);
+        g.setColor(triangle.getColor());
         g.fillPolygon(polygon);
     }
 }

@@ -1,24 +1,33 @@
 package drawing;
 
-import Figure.Circle;
-import Figure.Figure;
-import Figure.Rectangle;
-import Figure.Triangle;
-import vector.Vector2D;
+import figure.Circle;
+import figure.Figure;
+import figure.Rectangle;
+import figure.Triangle;
+import memento.*;
+import utils.DataSaver;
+import utils.Vector2D;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
+
 
 public class DynamicFigureGenerator extends JPanel {
     private Timer timer;
-    private Figure figureToDraw;
+    private List<Figure> figures;
     private Random random = new Random();
+    private boolean clear = false;
+    private CareTaker careTaker = new CareTaker();
 
     public DynamicFigureGenerator() {
+        figures =  new ArrayList<>();
         timer = new Timer(0, e -> repaint());
     }
-    
+
     public Timer getTimer() {
         return timer;
     }
@@ -26,8 +35,8 @@ public class DynamicFigureGenerator extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        if (figureToDraw != null)
-            figureToDraw.draw(g);
+        if (!clear)
+            figures.forEach(figure -> figure.draw(g));
         timer.stop();
     }
 
@@ -48,34 +57,72 @@ public class DynamicFigureGenerator extends JPanel {
         return (int) (minPos + (maxPos - minPos) * random.nextDouble());
     }
 
-
     public void initButtons() {
         JButton circle = new JButton("Circle");
         JButton rectangle = new JButton("Rectangle");
         JButton triangle = new JButton("Triangle");
+        JButton clear = new JButton("Clear");
+        JButton load = new JButton("Load");
+        JButton save = new JButton("Save");
 
         circle.addActionListener(e -> {
-            figureToDraw = new Circle(generateRandomVector2D(), generateRandomValue());
+            this.clear = false;
+            Figure figureToDraw = new Circle(generateRandomVector2D(), generateRandomValue());
+            figures.add(figureToDraw);
             timer.start();
         });
 
         triangle.addActionListener(e -> {
-            figureToDraw = new Triangle(generateRandomVector2D(),
+            this.clear = false;
+            Figure figureToDraw = new Triangle(generateRandomVector2D(),
                     generateRandomVector2D(),
                     generateRandomVector2D());
+            figures.add(figureToDraw);
             timer.start();
         });
 
         rectangle.addActionListener(e -> {
-            figureToDraw = new Rectangle(generateRandomVector2D(),
+            this.clear = false;
+            Figure figureToDraw = new Rectangle(generateRandomVector2D(),
                     generateRandomValue(),
                     generateRandomValue());
+            figures.add(figureToDraw);
             timer.start();
         });
 
+        clear.addActionListener(e -> {
+            this.clear = true;
+            this.figures.clear();
+            timer.start();
+        });
+
+        save.addActionListener(e -> {
+            careTaker.add(new Memento(figures));
+            var currentState = careTaker.getMementos().size() - 1;
+            try {
+                DataSaver.save(careTaker.getMementos().get(currentState).getState());
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
+
+        load.addActionListener(e -> {
+//            figures.clear();
+//            try {
+//                DataLoader.load(particleRepository);
+//            } catch (IOException ex) {
+//                ex.printStackTrace();
+//            }
+//            if (!timer.isRunning()) {
+//                timer.start();
+//            }
+        });
         this.add(circle);
         this.add(rectangle);
         this.add(triangle);
+        this.add(clear);
+        this.add(save);
+        this.add(load);
     }
 
 }

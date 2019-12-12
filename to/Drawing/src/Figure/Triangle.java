@@ -1,7 +1,10 @@
-package Figure;
+package figure;
 
 import drawing.DrawTriangle;
-import vector.Vector2D;
+import figure.state.FigureState;
+import figure.state.TriangleState;
+import utils.RandomColorGenerator;
+import utils.Vector2D;
 
 import java.awt.*;
 
@@ -10,12 +13,15 @@ public class Triangle implements Figure {
     private Vector2D v2;
     private Vector2D v3;
     private DrawTriangle drawTriangle;
+    private Color color;
 
     public Triangle(Vector2D v1, Vector2D v2, Vector2D v3) {
         this.v1 = v1;
         this.v2 = v2;
         this.v3 = v3;
         drawTriangle = new DrawTriangle(this);
+        RandomColorGenerator randomColorGenerator = new RandomColorGenerator();
+        this.color = randomColorGenerator.generateColor();
     }
 
     public Vector2D getV1() {
@@ -50,7 +56,17 @@ public class Triangle implements Figure {
     }
 
     @Override
+    public Color getColor() {
+        return color;
+    }
+
+    @Override
     public void draw(Graphics g) {
         drawTriangle.draw(g);
+    }
+
+    @Override
+    public FigureState toState() {
+        return new TriangleState(v1, v2, v3);
     }
 }

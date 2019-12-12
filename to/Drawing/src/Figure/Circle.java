@@ -1,7 +1,10 @@
-package Figure;
+package figure;
 
 import drawing.DrawCircle;
-import vector.Vector2D;
+import figure.state.CircleState;
+import figure.state.FigureState;
+import utils.RandomColorGenerator;
+import utils.Vector2D;
 
 import java.awt.*;
 
@@ -9,11 +12,14 @@ public class Circle implements Figure {
     private Vector2D center;
     private double radius;
     private DrawCircle drawCircle;
+    private Color color;
 
     public Circle(Vector2D center, int radius) {
         this.center = center;
         this.radius = radius;
-        drawCircle = new DrawCircle(this);
+        this.drawCircle = new DrawCircle(this);
+        RandomColorGenerator randomColorGenerator = new RandomColorGenerator();
+        this.color = randomColorGenerator.generateColor();
     }
 
     public Vector2D getCenter() {
@@ -35,7 +41,17 @@ public class Circle implements Figure {
     }
 
     @Override
+    public Color getColor() {
+        return color;
+    }
+
+    @Override
     public void draw(Graphics g) {
         drawCircle.draw(g);
+    }
+
+    @Override
+    public FigureState toState() {
+        return new CircleState(center, radius);
     }
 }

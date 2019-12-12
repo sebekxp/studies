@@ -1,7 +1,10 @@
-package Figure;
+package figure;
 
 import drawing.DrawRectangle;
-import vector.Vector2D;
+import figure.state.FigureState;
+import figure.state.RectangleState;
+import utils.RandomColorGenerator;
+import utils.Vector2D;
 
 import java.awt.*;
 
@@ -10,12 +13,15 @@ public class Rectangle implements Figure {
     private double width;
     private double height;
     private DrawRectangle drawRectangle;
+    private Color color;
 
     public Rectangle(Vector2D vertex, double width, double height) {
         this.vertex = vertex;
         this.width = width;
         this.height = height;
-        drawRectangle = new DrawRectangle(this);
+        this.drawRectangle = new DrawRectangle(this);
+        RandomColorGenerator randomColorGenerator = new RandomColorGenerator();
+        this.color = randomColorGenerator.generateColor();
     }
 
     public Vector2D getVertex() {
@@ -41,7 +47,17 @@ public class Rectangle implements Figure {
     }
 
     @Override
+    public Color getColor() {
+        return color;
+    }
+
+    @Override
     public void draw(Graphics g) {
         drawRectangle.draw(g);
+    }
+
+    @Override
+    public FigureState toState() {
+        return new RectangleState(vertex, width, height);
     }
 }

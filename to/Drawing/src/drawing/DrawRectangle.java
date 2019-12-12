@@ -1,7 +1,7 @@
 package drawing;
 
 
-import Figure.Rectangle;
+import figure.Rectangle;
 
 import java.awt.*;
 
@@ -19,7 +19,7 @@ public class DrawRectangle implements Drawable {
         int w = (int) rectangle.getWidth();
         int h = (int) rectangle.getHeight();
 
-        g.setColor(Color.BLUE);
+        g.setColor(rectangle.getColor());
         g.fillRect(x,y,w,h);
     }
 }
