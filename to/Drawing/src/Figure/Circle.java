@@ -54,4 +54,9 @@ public class Circle implements Figure {
     public FigureState toState() {
         return new CircleState(center, radius);
     }
+
+    @Override
+    public Figure loadState(FigureState figureState) {
+        return null;
+    }
 }

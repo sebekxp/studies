@@ -1,0 +1,110 @@
+[
+  {
+    "className": "figure.state.TriangleState",
+    "data": {
+      "v1": {
+        "x": 187.11802695342575,
+        "y": 214.91124465449874
+      },
+      "v2": {
+        "x": 463.8177112027326,
+        "y": 235.56596715478227
+      },
+      "v3": {
+        "x": 39.26281021502315,
+        "y": 105.67187220512862
+      }
+    }
+  },
+  {
+    "className": "figure.state.RectangleState",
+    "data": {
+      "vertex": {
+        "x": 330.64868103212024,
+        "y": 457.0660410856034
+      },
+      "width": 391.0,
+      "height": 29.0
+    }
+  },
+  {
+    "className": "figure.state.CircleState",
+    "data": {
+      "center": {
+        "x": 99.59620180918915,
+        "y": 209.60008341391983
+      },
+      "radius": 426.0
+    }
+  },
+  {
+    "className": "figure.state.RectangleState",
+    "data": {
+      "vertex": {
+        "x": 426.1139865989378,
+        "y": 377.482160029163
+      },
+      "width": 253.0,
+      "height": 28.0
+    }
+  },
+  {
+    "className": "figure.state.CircleState",
+    "data": {
+      "center": {
+        "x": 342.26352911612645,
+        "y": 427.6304158972591
+      },
+      "radius": 421.0
+    }
+  },
+  {
+    "className": "figure.state.RectangleState",
+    "data": {
+      "vertex": {
+        "x": 95.13991154410024,
+        "y": 447.45514160425637
+      },
+      "width": 82.0,
+      "height": 352.0
+    }
+  },
+  {
+    "className": "figure.state.TriangleState",
+    "data": {
+      "v1": {
+        "x": 73.83529839918072,
+        "y": 461.6196641855794
+      },
+      "v2": {
+        "x": 305.701908233449,
+        "y": 473.46960133368674
+      },
+      "v3": {
+        "x": 87.52120628965848,
+        "y": 243.4020248640371
+      }
+    }
+  },
+  {
+    "className": "figure.state.RectangleState",
+    "data": {
+      "vertex": {
+        "x": 436.3811539852034,
+        "y": 278.6601664194767
+      },
+      "width": 128.0,
+      "height": 252.0
+    }
+  },
+  {
+    "className": "figure.state.CircleState",
+    "data": {
+      "center": {
+        "x": 337.7184614647659,
+        "y": 76.60064595002176
+      },
+      "radius": 240.0
+    }
+  }
+]

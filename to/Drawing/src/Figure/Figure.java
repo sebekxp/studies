@@ -13,4 +13,6 @@ public interface Figure extends Drawable {
     Color getColor();
 
     FigureState toState();
+
+    Figure loadState(FigureState figureState);
 }

@@ -1,30 +1,28 @@
 package drawing;
 
-import figure.Circle;
-import figure.Figure;
 import figure.Rectangle;
-import figure.Triangle;
-import memento.*;
+import figure.*;
+import memento.CareTaker;
+import memento.Memento;
+import utils.DataLoader;
 import utils.DataSaver;
 import utils.Vector2D;
 
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 
 public class DynamicFigureGenerator extends JPanel {
     private Timer timer;
-    private List<Figure> figures;
+    private FiguresRepository figuresRepository;
     private Random random = new Random();
     private boolean clear = false;
     private CareTaker careTaker = new CareTaker();
 
     public DynamicFigureGenerator() {
-        figures =  new ArrayList<>();
+        figuresRepository = new FiguresRepository();
         timer = new Timer(0, e -> repaint());
     }
 
@@ -36,7 +34,7 @@ public class DynamicFigureGenerator extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (!clear)
-            figures.forEach(figure -> figure.draw(g));
+            figuresRepository.getFigures().forEach(figure -> figure.draw(g));
         timer.stop();
     }
 
@@ -68,7 +66,7 @@ public class DynamicFigureGenerator extends JPanel {
         circle.addActionListener(e -> {
             this.clear = false;
             Figure figureToDraw = new Circle(generateRandomVector2D(), generateRandomValue());
-            figures.add(figureToDraw);
+            figuresRepository.getFigures().add(figureToDraw);
             timer.start();
         });
 
@@ -77,7 +75,7 @@ public class DynamicFigureGenerator extends JPanel {
             Figure figureToDraw = new Triangle(generateRandomVector2D(),
                     generateRandomVector2D(),
                     generateRandomVector2D());
-            figures.add(figureToDraw);
+            figuresRepository.getFigures().add(figureToDraw);
             timer.start();
         });
 
@@ -86,18 +84,18 @@ public class DynamicFigureGenerator extends JPanel {
             Figure figureToDraw = new Rectangle(generateRandomVector2D(),
                     generateRandomValue(),
                     generateRandomValue());
-            figures.add(figureToDraw);
+            figuresRepository.getFigures().add(figureToDraw);
             timer.start();
         });
 
         clear.addActionListener(e -> {
             this.clear = true;
-            this.figures.clear();
+            this.figuresRepository.getFigures().clear();
             timer.start();
         });
 
         save.addActionListener(e -> {
-            careTaker.add(new Memento(figures));
+            careTaker.add(new Memento(figuresRepository.getFigures()));
             var currentState = careTaker.getMementos().size() - 1;
             try {
                 DataSaver.save(careTaker.getMementos().get(currentState).getState());
@@ -107,15 +105,11 @@ public class DynamicFigureGenerator extends JPanel {
         });
 
         load.addActionListener(e -> {
-//            figures.clear();
-//            try {
-//                DataLoader.load(particleRepository);
-//            } catch (IOException ex) {
-//                ex.printStackTrace();
-//            }
-//            if (!timer.isRunning()) {
-//                timer.start();
-//            }
+            figuresRepository.getFigures().clear();
+            figuresRepository = DataLoader.loadData();
+            if (!timer.isRunning()) {
+                timer.start();
+            }
         });
         this.add(circle);
         this.add(rectangle);

@@ -2,8 +2,6 @@ package figure.state;
 
 import utils.Vector2D;
 
-import java.util.List;
-
 public class RectangleState implements FigureState {
     private Vector2D vertex;
     private double width;
@@ -25,15 +23,5 @@ public class RectangleState implements FigureState {
 
     public double getHeight() {
         return height;
-    }
-
-    @Override
-    public List<Vector2D> getVectors2D() {
-        return null;
-    }
-
-    @Override
-    public double getSizes() {
-        return 0;
     }
 }

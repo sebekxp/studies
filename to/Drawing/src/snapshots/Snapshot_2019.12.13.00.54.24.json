@@ -1,0 +1,89 @@
+[
+  {
+    "className": "figure.state.TriangleState",
+    "data": {
+      "v1": {
+        "x": 473.1763624682294,
+        "y": 108.19279680746531
+      },
+      "v2": {
+        "x": 94.96757233463556,
+        "y": 357.8678205124905
+      },
+      "v3": {
+        "x": 80.63327340338762,
+        "y": 449.6231519118108
+      }
+    }
+  },
+  {
+    "className": "figure.state.RectangleState",
+    "data": {
+      "vertex": {
+        "x": 214.5300095334642,
+        "y": 192.15270739210504
+      },
+      "width": 260.0,
+      "height": 253.0
+    }
+  },
+  {
+    "className": "figure.state.CircleState",
+    "data": {
+      "center": {
+        "x": 370.90969455124826,
+        "y": 32.70043932657089
+      },
+      "radius": 121.0
+    }
+  },
+  {
+    "className": "figure.state.RectangleState",
+    "data": {
+      "vertex": {
+        "x": 452.06833875824583,
+        "y": 44.4771240888512
+      },
+      "width": 294.0,
+      "height": 413.0
+    }
+  },
+  {
+    "className": "figure.state.CircleState",
+    "data": {
+      "center": {
+        "x": 80.69638858165754,
+        "y": 104.4269347794085
+      },
+      "radius": 467.0
+    }
+  },
+  {
+    "className": "figure.state.RectangleState",
+    "data": {
+      "vertex": {
+        "x": 125.65573948007317,
+        "y": 109.76194334191503
+      },
+      "width": 129.0,
+      "height": 125.0
+    }
+  },
+  {
+    "className": "figure.state.TriangleState",
+    "data": {
+      "v1": {
+        "x": 53.23236157262413,
+        "y": 149.99198020429083
+      },
+      "v2": {
+        "x": 419.39286034417677,
+        "y": 78.5976478567117
+      },
+      "v3": {
+        "x": 416.2582640949449,
+        "y": 330.26066799850554
+      }
+    }
+  }
+]

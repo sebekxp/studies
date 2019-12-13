@@ -2,8 +2,6 @@ package figure.state;
 
 import utils.Vector2D;
 
-import java.util.List;
-
 public class TriangleState implements FigureState {
     private Vector2D v1;
     private Vector2D v2;
@@ -25,15 +23,5 @@ public class TriangleState implements FigureState {
 
     public Vector2D getV3() {
         return v3;
-    }
-
-    @Override
-    public List<Vector2D> getVectors2D() {
-        return null;
-    }
-
-    @Override
-    public double getSizes() {
-        return 0;
     }
 }

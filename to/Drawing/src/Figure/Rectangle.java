@@ -60,4 +60,9 @@ public class Rectangle implements Figure {
     public FigureState toState() {
         return new RectangleState(vertex, width, height);
     }
+
+    @Override
+    public Figure loadState(FigureState figureState) {
+        return null;
+    }
 }

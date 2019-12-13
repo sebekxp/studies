@@ -2,9 +2,6 @@ package figure.state;
 
 import utils.Vector2D;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class CircleState implements FigureState {
     private Vector2D center;
     private double radius;
@@ -20,15 +17,5 @@ public class CircleState implements FigureState {
 
     public double getRadius() {
         return radius;
-    }
-
-    @Override
-    public List<Vector2D> getVectors2D() {
-        return Arrays.asList(getCenter());
-    }
-
-    @Override
-    public double getSizes() {
-        return getRadius();
     }
 }

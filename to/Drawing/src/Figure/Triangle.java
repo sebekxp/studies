@@ -69,4 +69,9 @@ public class Triangle implements Figure {
     public FigureState toState() {
         return new TriangleState(v1, v2, v3);
     }
+
+    @Override
+    public Figure loadState(FigureState figureState) {
+        return null;
+    }
 }
