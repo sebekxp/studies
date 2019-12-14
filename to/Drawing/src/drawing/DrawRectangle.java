@@ -19,7 +19,7 @@ public class DrawRectangle implements Drawable {
         int w = (int) rectangle.getWidth();
         int h = (int) rectangle.getHeight();
 
-        g.setColor(rectangle.getColor());
-        g.fillRect(x,y,w,h);
+        g.setColor(new Color(rectangle.getColor()));
+        g.fillRect(x, y, w, h);
     }
 }

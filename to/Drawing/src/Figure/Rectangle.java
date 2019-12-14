@@ -13,7 +13,7 @@ public class Rectangle implements Figure {
     private double width;
     private double height;
     private DrawRectangle drawRectangle;
-    private Color color;
+    private Integer color;
 
     public Rectangle(Vector2D vertex, double width, double height) {
         this.vertex = vertex;
@@ -22,6 +22,17 @@ public class Rectangle implements Figure {
         this.drawRectangle = new DrawRectangle(this);
         RandomColorGenerator randomColorGenerator = new RandomColorGenerator();
         this.color = randomColorGenerator.generateColor();
+    }
+
+    public Rectangle(Vector2D vertex, double width, double height, Integer color) {
+        this.vertex = vertex;
+        this.width = width;
+        this.height = height;
+        this.drawRectangle = new DrawRectangle(this);
+        this.color = color;
+    }
+
+    public Rectangle() {
     }
 
     public Vector2D getVertex() {
@@ -47,7 +58,7 @@ public class Rectangle implements Figure {
     }
 
     @Override
-    public Color getColor() {
+    public Integer getColor() {
         return color;
     }
 
@@ -58,11 +69,11 @@ public class Rectangle implements Figure {
 
     @Override
     public FigureState toState() {
-        return new RectangleState(vertex, width, height);
+        return new RectangleState(vertex, width, height, color);
     }
 
-    @Override
     public Figure loadState(FigureState figureState) {
-        return null;
+        RectangleState rect = (RectangleState) figureState;
+        return new Rectangle(rect.getVertex(), rect.getWidth(), rect.getHeight(), rect.getColor());
     }
 }

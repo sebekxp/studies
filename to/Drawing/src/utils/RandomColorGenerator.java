@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Random;
 
 public class RandomColorGenerator {
-    private List<Color> colors;
+    private List<Integer> colors;
     private Random rand = new Random();
     private static final int NUMOFCOLORS = 100;
 
@@ -17,11 +17,11 @@ public class RandomColorGenerator {
             var g = rand.nextFloat();
             var b = rand.nextFloat();
             Color color = new Color(r, g, b);
-            colors.add(color);
+            colors.add(color.getRGB());
         }
     }
 
-    public Color generateColor() {
+    public Integer generateColor() {
         return colors.get(rand.nextInt(colors.size()));
     }
 }

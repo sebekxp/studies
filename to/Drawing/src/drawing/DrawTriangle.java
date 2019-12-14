@@ -26,7 +26,7 @@ public class DrawTriangle implements Drawable {
 
         Polygon polygon = new Polygon(x, y, 3);
         g.drawPolygon(polygon);
-        g.setColor(triangle.getColor());
+        g.setColor(new Color(triangle.getColor()));
         g.fillPolygon(polygon);
     }
 }

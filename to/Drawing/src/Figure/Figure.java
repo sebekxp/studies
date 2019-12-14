@@ -3,14 +3,12 @@ package figure;
 import drawing.Drawable;
 import figure.state.FigureState;
 
-import java.awt.*;
-
 public interface Figure extends Drawable {
     double getArea();
 
     double getPerimeter();
 
-    Color getColor();
+    Integer getColor();
 
     FigureState toState();
 

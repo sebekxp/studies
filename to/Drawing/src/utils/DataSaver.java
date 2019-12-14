@@ -3,7 +3,6 @@ package utils;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import figure.Figure;
 import figure.FigureAdapter;
 import figure.state.FigureState;
 
@@ -22,12 +21,13 @@ public class DataSaver {
                 new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date()) + ".json";
         Gson gson = new GsonBuilder()
                 .setPrettyPrinting()
-                .registerTypeAdapter(Figure.class, new FigureAdapter())
+                .registerTypeAdapter(FigureState.class, new FigureAdapter())
                 .create();
 
         try (FileWriter writer = new FileWriter(filePath)) {
-            Type type = new TypeToken<List<Figure>>(){}.getType();
-            gson.toJson(figureStates,type, writer);
+            Type type = new TypeToken<List<FigureState>>() {
+            }.getType();
+            gson.toJson(figureStates, type, writer);
         } catch (IOException e) {
             e.printStackTrace();
         }

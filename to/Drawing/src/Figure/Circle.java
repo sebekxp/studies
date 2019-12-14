@@ -12,7 +12,7 @@ public class Circle implements Figure {
     private Vector2D center;
     private double radius;
     private DrawCircle drawCircle;
-    private Color color;
+    private Integer color;
 
     public Circle(Vector2D center, int radius) {
         this.center = center;
@@ -20,6 +20,16 @@ public class Circle implements Figure {
         this.drawCircle = new DrawCircle(this);
         RandomColorGenerator randomColorGenerator = new RandomColorGenerator();
         this.color = randomColorGenerator.generateColor();
+    }
+
+    public Circle(Vector2D center, int radius, Integer color) {
+        this.center = center;
+        this.radius = radius;
+        this.drawCircle = new DrawCircle(this);
+        this.color = color;
+    }
+
+    public Circle() {
     }
 
     public Vector2D getCenter() {
@@ -41,7 +51,7 @@ public class Circle implements Figure {
     }
 
     @Override
-    public Color getColor() {
+    public Integer getColor() {
         return color;
     }
 
@@ -52,11 +62,11 @@ public class Circle implements Figure {
 
     @Override
     public FigureState toState() {
-        return new CircleState(center, radius);
+        return new CircleState(center, radius, color);
     }
 
-    @Override
-    public Figure loadState(FigureState figureState) {
-        return null;
+    public Circle loadState(FigureState figureState) {
+        CircleState circleState = (CircleState) figureState;
+        return new Circle(circleState.getCenter(), (int) circleState.getRadius(), circleState.getColor());
     }
 }

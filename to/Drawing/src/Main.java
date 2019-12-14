@@ -11,7 +11,7 @@ public class Main {
         frame.add(dynamicFigureGenerator);
         dynamicFigureGenerator.initButtons();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setPreferredSize(new Dimension(800,800));
+        frame.setPreferredSize(new Dimension(800, 800));
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);

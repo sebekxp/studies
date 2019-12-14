@@ -1,6 +1,7 @@
 package figure;
 
 import com.google.gson.*;
+import figure.state.FigureState;
 
 import java.lang.reflect.Type;
 
@@ -9,8 +10,8 @@ public class FigureAdapter implements JsonSerializer, JsonDeserializer {
     private static final String CLASSNAME = "className";
     private static final String DATA = "data";
 
-    public Figure deserialize(JsonElement jsonElement, Type type,
-                              JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
+    public FigureState deserialize(JsonElement jsonElement, Type type,
+                                   JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
 
         JsonObject jsonObject = jsonElement.getAsJsonObject();
         JsonPrimitive prim = (JsonPrimitive) jsonObject.get(CLASSNAME);

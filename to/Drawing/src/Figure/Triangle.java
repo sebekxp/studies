@@ -13,7 +13,7 @@ public class Triangle implements Figure {
     private Vector2D v2;
     private Vector2D v3;
     private DrawTriangle drawTriangle;
-    private Color color;
+    private Integer color;
 
     public Triangle(Vector2D v1, Vector2D v2, Vector2D v3) {
         this.v1 = v1;
@@ -22,6 +22,17 @@ public class Triangle implements Figure {
         drawTriangle = new DrawTriangle(this);
         RandomColorGenerator randomColorGenerator = new RandomColorGenerator();
         this.color = randomColorGenerator.generateColor();
+    }
+
+    public Triangle(Vector2D v1, Vector2D v2, Vector2D v3, Integer color) {
+        this.v1 = v1;
+        this.v2 = v2;
+        this.v3 = v3;
+        drawTriangle = new DrawTriangle(this);
+        this.color = color;
+    }
+
+    public Triangle() {
     }
 
     public Vector2D getV1() {
@@ -56,7 +67,7 @@ public class Triangle implements Figure {
     }
 
     @Override
-    public Color getColor() {
+    public Integer getColor() {
         return color;
     }
 
@@ -67,11 +78,11 @@ public class Triangle implements Figure {
 
     @Override
     public FigureState toState() {
-        return new TriangleState(v1, v2, v3);
+        return new TriangleState(v1, v2, v3, color);
     }
 
-    @Override
     public Figure loadState(FigureState figureState) {
-        return null;
+        TriangleState triangle = (TriangleState) figureState;
+        return new Triangle(triangle.getV1(), triangle.getV2(), triangle.getV3(), triangle.getColor());
     }
 }

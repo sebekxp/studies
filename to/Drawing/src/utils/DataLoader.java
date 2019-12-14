@@ -4,9 +4,11 @@ package utils;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import figure.Figure;
-import figure.FigureAdapter;
-import figure.FiguresRepository;
+import figure.*;
+import figure.state.CircleState;
+import figure.state.FigureState;
+import figure.state.RectangleState;
+import figure.state.TriangleState;
 
 import javax.swing.*;
 import java.io.File;
@@ -27,18 +29,33 @@ public class DataLoader {
 
             Gson gson = new GsonBuilder()
                     .setLenient()
-                    .registerTypeAdapter(Figure.class, new FigureAdapter())
+                    .registerTypeAdapter(FigureState.class, new FigureAdapter())
                     .create();
 
             try (Reader reader = new FileReader(selectedFile)) {
-                Type collectionType = new TypeToken<List<Figure>>() {
+                Type collectionType = new TypeToken<List<FigureState>>() {
                 }.getType();
 
-                List<Figure> figures = gson.fromJson(reader, collectionType);
+                List<FigureState> figureStateList = gson.fromJson(reader, collectionType);
                 FiguresRepository figuresRepository = new FiguresRepository();
 
-                for (Figure figure : figures) {
-                    figuresRepository.add(figure);
+
+                for (FigureState figureState : figureStateList) {
+                    Figure f = null;
+                    if (figureState instanceof CircleState) {
+                        Circle circle = new Circle();
+                        f = circle.loadState(figureState);
+                    }
+                    else if (figureState instanceof TriangleState) {
+                        Triangle triangle = new Triangle();
+                        f = triangle.loadState(figureState);
+                    }
+                    else if (figureState instanceof RectangleState) {
+                        Rectangle rectangle = new Rectangle();
+                        f = rectangle.loadState(figureState);
+                    }
+
+                    figuresRepository.add(f);
                 }
 
                 return figuresRepository;
